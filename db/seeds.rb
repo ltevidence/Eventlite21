@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 nb_users = 10
+nb_event = 
 
 nb_users.times do |x|
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Name.first_name+"@yopmail.com", description: Faker::Lorem.sentences(number: 2))
