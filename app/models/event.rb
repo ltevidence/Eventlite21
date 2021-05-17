@@ -7,6 +7,7 @@ class Event < ApplicationRecord
   validate :start_date_cannot_be_in_the_past
 
   validates :duration, 
+  presence: true,
   numericality: {only_integer: true, greater_than: 0}
   validate :has_to_be_multiple_of_5
 
