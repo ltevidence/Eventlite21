@@ -6,12 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-nb_users = 10
-nb_event = 
+nb_users = 20
+nb_event = 10
+users = []
+events = []
 
-nb_users.times do |x|
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Name.first_name+"@yopmail.com", description: Faker::Lorem.sentences(number: 2))
-puts "Seeding User nb#{x}"
-end
-
+nb_event.times do |x|
+  event = Event.create(title: Faker::Book.title,description: Faker::Lorem.sentences(number: 2),start_date: Faker::Date.between(from: '2021-05-23', to: '2021-09-25'),duration: rand(1..120),location: Faker::Address.city,user_id: users[rand(108..164).id])
+  events << event
+  puts "Seeding Event nb#{x +1}"
+end 
 

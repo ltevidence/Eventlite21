@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+nav {
+  height: 7.5rem;
+}
+
+nav li {
+  padding-left: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+.user-menu ul{
+display: flex;
+justify-items: center;
+justify-content: center;
+}
+.user-menu a:hover {
+  text-decoration: none;
+}
+.user-menu li {
+  padding-left: 10px;
+}
+
+
+.card a {
+  text-decoration: none;
+  color: white;
+}
+
+.card a:hover {
+  text-decoration: none;
+  color: white;
+} 
