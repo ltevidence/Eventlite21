@@ -45,16 +45,16 @@
   </div>
 </nav>
 <br><br><br><br><br><br>
-<% if user_signed_in? %>
-<center><p>Connecté en tant que : <%= current_user.email %></p></center>
 <div class="user-menu">
-<ul>
+  <% if user_signed_in? %>
+    <center>
+      <p>Connecté en tant que : <%= current_user.email %></p></center>
+   <ul>
     <li>
       <button class="btn btn-danger"><a href="/profile/<%=current_user.id%>" class="text-white">Mon profil</a></button>
     </li>
-
     <li>
-      <button class="btn btn-danger"><a href="/passwords/" class="text-white">Changer de mot de passe / email</a></button>
+      <button class="btn btn-danger"><a href="/users/edit" class="text-white">Changer de mot de passe / email</a></button>
     </li>
     <li><button class="btn btn-danger"><a href="/events/new" class="text-white">Nouvel Evènement</a></button></li>
 </ul>
