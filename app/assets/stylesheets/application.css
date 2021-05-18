@@ -30,6 +30,7 @@ li {
 display: flex;
 justify-items: center;
 justify-content: center;
+justify-self: end;
 }
 .user-menu a:hover {
   text-decoration: none;
@@ -48,3 +49,9 @@ justify-content: center;
   text-decoration: none;
   color: white;
 } 
+
+.profile-access {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}

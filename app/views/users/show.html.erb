@@ -1,24 +1,16 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @user.description %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+    <div class="album py-5 bg-light">
+    <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="col">
+<div class="card shadow-sm text-white" style="max-width: 18rem,min-height: 18rem;">
+  <div class="card-header bg-info"><h5 align="center">Ton profil utilisateur</h5></div>
+  <div class="card-header bg-dark"><%= @user.first_name %></div>
+  <div class="card-header bg-dark"><%= @user.last_name %> min</div>
+  <div class="card-header bg-dark"><%= @user.email %></div>
+  <div class="card-body bg-danger"><h5 class="card-title"><%=@user.description%></h5><p class="card-text"><%= @user.description%></p></div>
+  </div>
+    <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', events_path %>
+  </div>
+
