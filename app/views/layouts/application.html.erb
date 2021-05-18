@@ -44,9 +44,8 @@
     <li>
       Connecté en tant que : <%= current_user.email %>
     </li>
-
     <li>
-      <%= link_to "Mon profil", static_pages_secret_path %>
+      <a href="/profile/<%=current_user.id%>">Mon profil</a>
     </li>
 
     <li>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/', to: "events#index"
-  get 'static_pages/secret'
+  get '/profile/:id', to: "users#show"
   devise_for :users
   resources :attendances
   resources :events
