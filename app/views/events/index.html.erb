@@ -15,9 +15,9 @@
     </div>
     <div class="album py-5 bg-light">
     <div class="container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="row">
     <% @events.each do |event| %>
-    <div class="col">
+    <div class="col-md-4 mt-2">
 <div class="card shadow-sm text-white" style="max-width: 18rem,min-height: 18rem;">
   <div class="card-header bg-info"><a href="/events/<%=event.id%>"><%=event.title%></a></div>
   <div class="card-header bg-dark"><%= event.start_date %></div>

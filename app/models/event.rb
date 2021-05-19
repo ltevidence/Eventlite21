@@ -1,7 +1,6 @@
 class Event < ApplicationRecord
-  belongs_to :admin, foreign_key: 'user_id', class_name: "User", optional: true
-  has_many :attendances
-  has_many :users, through: :attendances
+  has_many :guests, through: :attendances
+  belongs_to :admin, class_name: "User"
 
   validates :start_date, 
   presence: true

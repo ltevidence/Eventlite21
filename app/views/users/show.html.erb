@@ -6,11 +6,34 @@
 <div class="card shadow-sm text-white" style="max-width: 18rem,min-height: 18rem;">
   <div class="card-header bg-info"><h5 align="center">Ton profil utilisateur</h5></div>
   <div class="card-header bg-dark"><%= @user.first_name %></div>
-  <div class="card-header bg-dark"><%= @user.last_name %> min</div>
+  <div class="card-header bg-dark"><%= @user.last_name %></div>
   <div class="card-header bg-dark"><%= @user.email %></div>
   <div class="card-body bg-danger"><h5 class="card-title"><%=@user.description%></h5><p class="card-text"><%= @user.description%></p></div>
   </div>
-    <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', events_path %>
+       <div class="album py-5 bg-light">
+    <div class="container">
+    <div class="row">
+    <% @events.each do |event| %>
+        <% if event.admin_id == @user.id %>
+    <div class="col-md-4 mt-2">
+          <div class="card shadow-sm text-black" style="max-width: 18rem,min-height: 18rem;">
+            <div class="card-header bg-light"><%= "Date de début : #{event.start_date}" %></div>
+            <div class="card-header bg-light"><%= "Durée : #{event.duration} min" %></div>
+            <div class="card-header bg-light"><%= "Titre : #{event.title}" %></div>
+            <div class="card-header bg-light"><%= "Description : #{event.description}" %></div>
+            <div class="card-header bg-light"><%= "Tarif : #{event.price} €" %></div>
+            <div class="card-header bg-light"><%= "Lieu : #{event.location}" %></div>
+            <div class="card-header bg-danger"><%= link_to 'Show', event %></div>
+            <div class="card-header bg-danger"><%= link_to 'Edit', edit_event_path(event) %></div>
+            <div class="card-header bg-danger"><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      </div>
+   </div>
+   <% end %>
+      <% end %>
+   </div> 
+   </div>
   </div>
+  
 
