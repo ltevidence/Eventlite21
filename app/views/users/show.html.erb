@@ -1,24 +1,28 @@
 <p id="notice"><%= notice %></p>
     <div class="album py-5 bg-light">
     <div class="container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <div class="col">
-<div class="card shadow-sm text-white" style="max-width: 18rem,min-height: 18rem;">
+    <div class="row-align-center">
+    <div class="col-lg-12 col-md-6">
+<div class="card shadow-sm text-white">
   <div class="card-header bg-info"><h5 align="center">Ton profil utilisateur</h5></div>
   <div class="card-header bg-dark"><%= @user.first_name %></div>
   <div class="card-header bg-dark"><%= @user.last_name %></div>
   <div class="card-header bg-dark"><%= @user.email %></div>
-  <div class="card-body bg-danger"><h5 class="card-title"><%=@user.description%></h5><p class="card-text"><%= @user.description%></p></div>
+  <div class="card-body bg-danger"><h5 class="card-title">Description</h5><p class="card-text"><%= @user.description%></p></div>
   </div>
   <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', events_path %>
-       <div class="album py-5 bg-light">
+  </div>
+  </div>
+  </div>
+
+  <div class="album py-5 bg-light">
     <div class="container">
     <div class="row">
     <% @events.each do |event| %>
         <% if event.admin_id == @user.id %>
-    <div class="col-sm-12 col-md-6 mt-2 mb-2">
-          <div class="card shadow-sm text-black" style="max-width: 18rem,min-height: 18rem;">
+    <div class="col-sm-12 col-md-4 mt-2 mb-2 h-100">
+          <div class="card shadow-sm text-black">
             <div class="card-header bg-light"><%= "Date de début : #{event.start_date}" %></div>
             <div class="card-header bg-light"><%= "Durée : #{event.duration} min" %></div>
             <div class="card-header bg-light"><%= "Titre : #{event.title}" %></div>
@@ -35,5 +39,6 @@
    </div> 
    </div>
   </div>
+
   
 

@@ -19,7 +19,7 @@
     <% @events.reverse_each do |event| %>
     <div class="col-sm-12 col-md-4 mt-2 mb-2">
 <div class=" card shadow-sm text-white h-100">
-  <div class="card-header bg-info"><a href="/events/<%=event.id%>"><%=event.title%></a></div>
+  <div class="card-header bg-info"><center><a href="/events/<%=event.id%>"><%=event.title%></a></center></div>
   <div class="card-header bg-dark"><%= event.start_date %></div>
   <div class="card-header bg-dark"><%= event.duration %> min</div>
   <div class="card-header bg-dark"><%= event.location %></div>
@@ -27,7 +27,6 @@
   <div class="card-header bg-danger text-center"><%= event.price %>€</div>
   </div>
   </div>
-
   <% end%>
   </div>
   </div>
