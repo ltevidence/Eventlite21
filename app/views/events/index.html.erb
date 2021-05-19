@@ -17,8 +17,8 @@
     <div class="container">
     <div class="row">
     <% @events.reverse_each do |event| %>
-    <div class="col-md-4 mt-2">
-<div class="card shadow-sm text-white" style="max-width: 18rem,min-height: 18rem;">
+    <div class="col-sm-12 col-md-4 mt-2 mb-2">
+<div class=" card shadow-sm text-white h-100">
   <div class="card-header bg-info"><a href="/events/<%=event.id%>"><%=event.title%></a></div>
   <div class="card-header bg-dark"><%= event.start_date %></div>
   <div class="card-header bg-dark"><%= event.duration %> min</div>

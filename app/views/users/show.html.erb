@@ -17,7 +17,7 @@
     <div class="row">
     <% @events.each do |event| %>
         <% if event.admin_id == @user.id %>
-    <div class="col-md-4 mt-2">
+    <div class="col-sm-12 col-md-6 mt-2 mb-2">
           <div class="card shadow-sm text-black" style="max-width: 18rem,min-height: 18rem;">
             <div class="card-header bg-light"><%= "Date de début : #{event.start_date}" %></div>
             <div class="card-header bg-light"><%= "Durée : #{event.duration} min" %></div>
