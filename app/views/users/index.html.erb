@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @users.reverse_each do |user| %>
       <tr>
         <td><%= user.email %></td>
         <td><%= user.encrypted_password %></td>

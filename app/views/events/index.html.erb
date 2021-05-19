@@ -16,7 +16,7 @@
     <div class="album py-5 bg-light">
     <div class="container">
     <div class="row">
-    <% @events.each do |event| %>
+    <% @events.reverse_each do |event| %>
     <div class="col-md-4 mt-2">
 <div class="card shadow-sm text-white" style="max-width: 18rem,min-height: 18rem;">
   <div class="card-header bg-info"><a href="/events/<%=event.id%>"><%=event.title%></a></div>
