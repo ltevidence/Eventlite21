@@ -69,7 +69,7 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:email, :encrypted_password, :description, :first_name, :last_name)
     end
-
+    
     def user_authorized?
       @user = User.find(params[:id])
       if  @user.id == current_user.id
@@ -80,4 +80,5 @@ class UsersController < ApplicationController
         return false
       end
     end
+   
 end
