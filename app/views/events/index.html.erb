@@ -6,9 +6,9 @@
         <h2 class="display-4">Trouvez les évènements près de chez vous !</h2>
         <p>Découvrez les évènements disponibles proche de chez vous, physiquement ou en ligne.</p>
         <% if user_signed_in?%>
-        <p class="profile-access"><a href="/profile/<%=current_user.id%>" class="btn btn-info btn-lg" role="button">Accéder à votre profil</a></p>
+        <p class="profile-access"><a href="/profile/<%=current_user.id%>" class="btn btn-info btn-lg text-white" role="button">Accéder à votre profil</a></p>
         <% else%>
-        <p><a class="btn btn-info btn-lg" href="<%=new_user_registration_path%>" role="button">Inscrivez-vous</a></p>
+        <p><a class="btn btn-info btn-lg text-white" href="<%=new_user_registration_path%>" role="button">Inscrivez-vous</a></p>
         <p><button class="btn btn-danger"> <%= link_to "S'identifier", new_user_session_path, class:"text-white"%></button></p>
         <% end%>
       </div>

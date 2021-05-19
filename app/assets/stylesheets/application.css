@@ -21,6 +21,9 @@ nav {
 nav li {
   padding-left: 10px;
 }
+nav a {
+  text-decoration: none;
+}
 
 li {
   list-style: none;
@@ -32,13 +35,20 @@ justify-items: center;
 justify-content: center;
 justify-self: end;
 }
+
+.user-menu a {
+  text-decoration: none;
+}
 .user-menu a:hover {
   text-decoration: none;
 }
 .user-menu li {
   padding-left: 10px;
-}
 
+}
+button .text-white{
+text-decoration: none;
+}
 
 .card a {
   text-decoration: none;
