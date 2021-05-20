@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, only: %i[ show edit update destroy ]
   before_action :user_authorized?, only: %i[ show edit update destroy ]
+  before_action :admin?, only: %i[ edit ]
   # GET /users or /users.json
   def index
     @users = User.all
@@ -80,5 +81,13 @@ class UsersController < ApplicationController
         return false
       end
     end
-   
+
+    def admin?
+      if current_user = event.admin
+        return true
+      else 
+        flash[:danger] = "Vous n'êtes pas admnistrateur sur cet évènement."
+        redirect_to events_path
+      end
+    end
 end

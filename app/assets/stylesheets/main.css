@@ -1,0 +1,57 @@
+nav {
+  height: 7.5rem;
+}
+
+nav li {
+  padding-left: 10px;
+}
+nav a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.user-menu ul{
+display: flex;
+justify-items: center;
+justify-content: center;
+justify-self: end;
+}
+
+.user-menu a {
+  text-decoration: none;
+}
+.user-menu a:hover {
+  text-decoration: none;
+}
+.user-menu li {
+  padding-left: 10px;
+
+}
+button .text-white{
+text-decoration: none;
+}
+
+.card a {
+  text-decoration: none;
+  color: white;
+}
+
+.card a:hover {
+  text-decoration: none;
+  color: white;
+} 
+
+.profile-access {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.img-event {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}

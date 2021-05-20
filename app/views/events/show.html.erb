@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<div align="center"><%= image_tag @event.try(:avatar), alt: 'avatar',class:"shadow" %></div>
+
 <p>
   <strong>Start date:</strong>
   <%= @event.start_date %>
@@ -37,6 +39,13 @@
   <strong>End date:</strong>
   <%= %>
 </p>
-
+<% if user_signed_in? %>
+<p>
+  <strong>Location:</strong>
+  <%= link_to "Participer", new_attendance_path %>
+</p>
+<% else %>
+<p>Inscrivez-vous pour rejoindre l'évènement</p>
+<%end%>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

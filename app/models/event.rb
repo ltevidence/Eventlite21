@@ -1,9 +1,14 @@
 class Event < ApplicationRecord
   has_many :guests, through: :attendances
   belongs_to :admin, class_name: "User"
+  has_one_attached :avatar
+
+  validates :avatar,
+   presence: true
 
   validates :start_date, 
   presence: true
+
   validate :start_date_cannot_be_in_the_past
 
   validates :duration, 

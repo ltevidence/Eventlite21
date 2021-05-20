@@ -12,7 +12,7 @@ class AttendancesController < ApplicationController
 
   # GET /attendances/new
   def new
-    @attendance = Attendance.new
+    @user = current_user
   end
 
   # GET /attendances/1/edit
@@ -21,18 +21,27 @@ class AttendancesController < ApplicationController
 
   # POST /attendances or /attendances.json
   def create
-    @attendance = Attendance.new(attendance_params)
-
-    respond_to do |format|
-      if @attendance.save
-        format.html { redirect_to @attendance, notice: "Attendance was successfully created." }
-        format.json { render :show, status: :created, location: @attendance }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @attendance.errors, status: :unprocessable_entity }
-      end
+    @user = current_user
+    @product = @event.title
+    @amount = @event.price
+    @stripe_amount = (@amount * 100).to_i
+    begin
+    customer = Stripe::Customer.create({
+    email: params[:stripeEmail],
+    source: params[:stripeToken],
+    })
+    charge = Stripe::Charge.create({
+    customer: customer.id,
+    amount: @stripe_amount,
+    description: "Achat d'un produit",
+    currency: 'eur',
+    })
+    rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to new_order_path
     end
   end
+  
 
   # PATCH/PUT /attendances/1 or /attendances/1.json
   def update
