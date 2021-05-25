@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :avatars, only: [:create]
   end
   resources :users
+  resources :events, module: 'admin', as: "admin_events"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

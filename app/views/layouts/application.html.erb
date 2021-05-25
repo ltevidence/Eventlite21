@@ -24,6 +24,10 @@
     <li class="nav-item active">
         <%= link_to "Accueil", events_path, class:"text-white"%>
       </li>
+  <% if isAdmin? %>
+  <li class="nav-item">
+    <a href="#">Gestion du site</a></li>
+  <%end%>
     <% if user_signed_in? %>
       <li class="nav-item">
       
